@@ -1,40 +1,40 @@
-var towerImg, tower;
-var doorImg, door, doorsGroup;
-var climberImg, climber, climbersGroup;
-var ghost, ghostImg, jumpingImg;
-var invisibleBlockGroup, invisibleBlock;
-var gameState = "play";
+var torreImg, torre;
+var portaImg, porta, grupoPorta;
+var escaladorImg, escalador, grupoEscaladores;
+var fantasma, fantasmaImg, puloImg;
+var grupoInvisivel, blocoInvisivel;
+var estadoJogo = "jogar";
 
 function preload(){
-  towerImg = loadImage("tower.png");
-  doorImg = loadImage("door.png");
-  climberImg = loadImage("climber.png");
-  ghostImg = loadImage("ghost-standing.png");
-  jumpingImg = loadImage("ghost-jumping.png");
-  //spookySound = loadSound("spooky.wav");
+  torreImg = loadImage("torre.png");
+  portaImg = loadImage("porta.png");
+  escaladorImg = loadImage("escalador.png");
+  fantasmaImg = loadImage("fantasma.png");
+  puloImg = loadImage("fantasma-pulo.png");
+  //spookySound = loadSound("assustador.wav");
 }
 
 function setup() {
   createCanvas(600, 600);
 
   //criando um fundo e fazendo-o mover
-  tower = createSprite(300,300);
-  tower.addImage("tower",towerImg);
-  tower.velocityY = 2;
+  torre = createSprite(300,300);
+  torre.addImage("torre",torreImg);
+  torre.velocityY = 2;
   
   //criando fantasma e adicionando as imagens a ele
-  ghost = createSprite(300,200);
-  ghost.scale = 0.4;
-  ghost.addImage("standing",ghostImg);
-  ghost.addImage("jumping", jumpingImg);
+  fantasma = createSprite(300,200);
+  fantasma.scale = 0.4;
+  fantasma.addImage("fantasma",fantasmaImg);
+  fantasma.addImage("pulo", puloImg);
 }
 
 function draw() {
   background(200);
   
   //tornando o fundo infinito
-  if(tower.y > 600){
-    tower.y = 0;
+  if(torre.y > 600){
+    torre.y = 0;
   }
 
   drawSprites();
